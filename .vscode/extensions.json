@@ -1,0 +1,16 @@
+{
+  // Instale só extensões de publishers verificados. Extensões são código
+  // rodando com acesso total à sua máquina (e ao seu repositório).
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "svelte.svelte-vscode",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "vitest.explorer",
+    "usernamehw.errorlens",
+    "editorconfig.editorconfig",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-portuguese-brazilian"
+  ]
+}

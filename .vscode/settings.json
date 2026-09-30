@@ -1,0 +1,31 @@
+{
+  // Formatação: Prettier para tudo (com plugins de Astro, Svelte e Tailwind)
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "prettier.documentSelectors": ["**/*.astro", "**/*.svelte"],
+  "eslint.validate": ["javascript", "typescript", "astro", "svelte"],
+
+  // TypeScript do projeto (não o embutido no VS Code)
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+
+  // Tailwind v4: autocomplete dentro do CSS
+  "files.associations": { "*.css": "tailwindcss" },
+
+  // Conteúdo em português: o corretor pega erro de digitação nas afirmações
+  "cSpell.language": "en,pt-BR",
+  "cSpell.enabledFileTypes": { "json": true, "markdown": true },
+
+  // Higiene de arquivos
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.exclude": { "**/.astro": true, "**/dist": true },
+
+  // Segurança do editor
+  "security.workspace.trust.untrustedFiles": "prompt",
+  "npm.packageManager": "pnpm"
+}

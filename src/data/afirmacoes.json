@@ -1,0 +1,34 @@
+[
+  {
+    "id": "arcabouco-fiscal",
+    "tema": "economia",
+    "titulo": "O Brasil deve manter o arcabouço fiscal atual",
+    "explicacao": "O arcabouço fiscal é a regra que limita quanto o governo pode aumentar seus gastos a cada ano, com base no quanto arrecada. EXEMPLO: preencha com texto neutro e revisado.",
+    "posicoes": {
+      "lula": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=6",
+            "veiculo": "TSE",
+            "pagina": 6,
+            "acessadoEm": "2026-09-30"
+          }
+        ]
+      },
+      "flavio": {
+        "valor": "contra",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=70",
+            "veiculo": "TSE",
+            "pagina": 70,
+            "acessadoEm": "2026-09-30"
+          }
+        ]
+      }
+    }
+  }
+]

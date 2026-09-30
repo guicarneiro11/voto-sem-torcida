@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Quiz from '../components/Quiz.svelte';
+
+// Só o texto vai para o navegador nesta etapa. As posições entram junto com o cálculo.
+const afirmacoes = (await getCollection('afirmacoes')).map(({ data }) => ({
+  id: data.id,
+  tema: data.tema,
+  titulo: data.titulo,
+  explicacao: data.explicacao,
+}));
+---
+
+<Base title="Quiz eleitoral (em construção)">
+  <main class="mx-auto max-w-xl px-6 py-10">
+    <h1 class="text-2xl font-semibold">Quiz eleitoral</h1>
+    <p class="mt-2 text-neutral-600">{afirmacoes.length} afirmação(ões) carregada(s).</p>
+    <Quiz {afirmacoes} client:load />
+  </main>
+</Base>

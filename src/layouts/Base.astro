@@ -1,0 +1,25 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Compare suas opiniões com as propostas oficiais dos candidatos.' } =
+  Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="referrer" content="no-referrer" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-dvh bg-white text-neutral-900 antialiased">
+    <slot />
+  </body>
+</html>
