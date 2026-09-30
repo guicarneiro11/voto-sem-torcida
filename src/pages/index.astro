@@ -2,20 +2,29 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Quiz from '../components/Quiz.svelte';
+import { CANDIDATOS } from '../data/candidatos';
+import type { AfirmacaoQuiz, CandidatoQuiz } from '../lib/tipos';
 
-// Só o texto vai para o navegador nesta etapa. As posições entram junto com o cálculo.
-const afirmacoes = (await getCollection('afirmacoes')).map(({ data }) => ({
+// Tudo aqui é público (o repositório também é): posições e fontes vão no bundle
+// para o cálculo rodar no navegador, sem nenhuma requisição ao servidor.
+const afirmacoes: AfirmacaoQuiz[] = (await getCollection('afirmacoes')).map(({ data }) => ({
   id: data.id,
   tema: data.tema,
   titulo: data.titulo,
   explicacao: data.explicacao,
+  posicoes: data.posicoes,
 }));
+
+const candidatos: CandidatoQuiz[] = CANDIDATOS.map((c) => ({ ...c }));
 ---
 
-<Base title="Quiz eleitoral (em construção)">
+<Base title="Voto sem Torcida">
   <main class="mx-auto max-w-xl px-6 py-10">
-    <h1 class="text-2xl font-semibold">Quiz eleitoral</h1>
-    <p class="mt-2 text-neutral-600">{afirmacoes.length} afirmação(ões) carregada(s).</p>
-    <Quiz {afirmacoes} client:load />
+    <h1 class="text-2xl font-semibold">Voto sem Torcida</h1>
+    <p class="mt-2 text-neutral-600">
+      Responda às propostas sem saber de quem são. No final, veja de qual candidato suas respostas
+      mais se aproximam.
+    </p>
+    <Quiz {afirmacoes} {candidatos} client:load />
   </main>
 </Base>
