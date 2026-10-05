@@ -4,7 +4,7 @@ import svelte from '@astrojs/svelte';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://SEU-DOMINIO.com.br', // troque antes do primeiro deploy
+  site: 'https://votosemtorcida.com.br',
   output: 'static', // sem servidor = sem superfície de ataque de backend
   markdown: { syntaxHighlight: false }, // o site não exibe código; evita estilos inline
   integrations: [svelte()],

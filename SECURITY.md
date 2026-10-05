@@ -1,7 +1,7 @@
 # Política de segurança
 
 Encontrou uma vulnerabilidade? Não abra uma issue pública.
-Envie para: SEU-EMAIL-DE-CONTATO (responderemos em até 72h).
+Envie para: guicarneiro.dev@gmail.com ou https://x.com/guizaokt (responderemos em até 72h).
 
 Erros de conteúdo (posição de candidato errada, fonte quebrada) podem ser
 reportados publicamente via issue, com o link da fonte correta.
