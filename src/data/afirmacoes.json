@@ -1,12 +1,12 @@
 [
   {
-    "id": "arcabouco-fiscal",
+    "id": "substituir-arcabouco-fiscal",
     "tema": "economia",
-    "titulo": "O governo deve manter o arcabouço fiscal, a regra atual que limita o crescimento dos gastos",
-    "explicacao": "O arcabouço fiscal, em vigor desde 2023, limita quanto os gastos do governo federal podem crescer a cada ano, de acordo com o aumento da arrecadação. Quem defende mantê-lo diz que ele equilibra o controle das contas com o investimento social. Quem quer trocá-lo diz que a regra é frouxa e que é preciso um limite mais rígido para reduzir a dívida pública.",
+    "titulo": "O arcabouço fiscal deve ser substituído por uma regra mais rígida para conter os gastos do governo",
+    "explicacao": "O arcabouço fiscal, em vigor desde 2023, limita quanto os gastos do governo federal podem crescer a cada ano, de acordo com o aumento da arrecadação. Quem quer substituí-lo diz que a regra é frouxa e que é preciso um limite mais rígido para reduzir a dívida pública. Quem defende mantê-lo diz que ele já equilibra o controle das contas com o investimento social, e que uma regra mais dura cortaria serviços públicos.",
     "posicoes": {
       "lula": {
-        "valor": "a_favor",
+        "valor": "contra",
         "fontes": [
           {
             "tipo": "plano_tse",
@@ -18,7 +18,7 @@
         ]
       },
       "flavio": {
-        "valor": "contra",
+        "valor": "a_favor",
         "fontes": [
           {
             "tipo": "plano_tse",
