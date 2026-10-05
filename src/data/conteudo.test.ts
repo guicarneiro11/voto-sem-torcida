@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import afirmacoes from './afirmacoes.json';
 import { CANDIDATO_IDS } from './candidatos';
+import { calcularAfinidade, type PosicaoCandidato, type RespostaEleitor } from '../lib/afinidade';
 
 // Guardas de conteúdo que rodam na CI, além do schema do Astro.
 describe('conteúdo publicado', () => {
@@ -33,4 +34,23 @@ describe('conteúdo publicado', () => {
     });
     expect(divergentes.length).toBeGreaterThan(0);
   });
+
+  // Viés de concordância: quem concorda (ou discorda) de tudo não pode ser empurrado
+  // para um lado. Se falhar, há mais afirmações escritas como proposta de um candidato.
+  it.each<RespostaEleitor>(['concordo', 'discordo'])(
+    'responder "%s" em tudo resulta em empate entre os candidatos',
+    (resposta) => {
+      const resultado = calcularAfinidade({
+        candidatoIds: CANDIDATO_IDS,
+        afirmacoes: afirmacoes.map((a) => ({
+          id: a.id,
+          posicoes: Object.fromEntries(
+            Object.entries(a.posicoes).map(([id, p]) => [id, p.valor as PosicaoCandidato]),
+          ),
+        })),
+        respostas: Object.fromEntries(afirmacoes.map((a) => [a.id, resposta])),
+      });
+      expect(resultado.lideres.length).toBe(CANDIDATO_IDS.length);
+    },
+  );
 });
