@@ -2,6 +2,8 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "voto-sem-torcida",
   "compatibility_date": "2026-10-01",
+  // Só a versão de produção fica acessível; versões antigas não ganham endereço público.
+  "preview_urls": false,
   // Só arquivos estáticos: nenhum código roda no servidor (e não há custo por requisição).
   "assets": {
     "directory": "./dist",
