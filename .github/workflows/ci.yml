@@ -28,3 +28,4 @@ jobs:
       - run: pnpm check # astro check: tipos + validação do schema de conteúdo
       - run: pnpm test
       - run: pnpm build
+      - run: pnpm verificar:texto

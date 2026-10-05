@@ -13,6 +13,7 @@ export const SITE = {
     chave: '30b0d333-d135-4798-b85a-f7c5b9f2506a',
     tipo: 'aleatória',
     titular: 'Guilherme Henrique Carneiro',
+    cidade: 'Jaú',
   },
 } as const;
 

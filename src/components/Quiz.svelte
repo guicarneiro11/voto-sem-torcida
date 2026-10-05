@@ -99,7 +99,7 @@
     <p class="text-suave mt-5 text-lg leading-relaxed">
       Você vai ver {afirmacoes.length} propostas tiradas dos planos de governo registrados no TSE, sem
       saber de qual candidato é cada uma. No final, mostramos de quem suas respostas mais se aproximam
-      e onde vocês concordam ou discordam.
+      e em quais propostas você concorda ou discorda de cada um.
     </p>
 
     <ul class="mt-8 grid gap-3 text-sm sm:grid-cols-3">

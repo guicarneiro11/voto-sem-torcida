@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import CopiarPix from '../components/CopiarPix.svelte';
+import QrPix from '../components/QrPix.astro';
 import { SITE } from '../data/site';
 ---
 
@@ -30,12 +31,12 @@ import { SITE } from '../data/site';
       <li>O site é gratuito, sem anúncios e sem patrocínio.</li>
       <li>
         Os custos são baixos (domínio e manutenção) e podem ser cobertos por doações voluntárias via
-        PIX.
+        Pix.
       </li>
       <li>
         <strong>
           Não aceitamos doações de partidos, candidatos, campanhas ou pessoas ligadas a elas.
-        </strong>
+        </strong>{' '}
         Se uma doação assim for identificada, ela será devolvida.
       </li>
       <li>Doar não dá direito a influenciar nenhum conteúdo.</li>
@@ -43,13 +44,20 @@ import { SITE } from '../data/site';
 
     {SITE.pix.chave && (
       <section class="mt-6 rounded-xl border border-linha bg-cartao p-6">
-        <h3 class="mt-0!">Apoie com PIX</h3>
-        <p class="mt-2! text-sm text-suave">
-          Chave {SITE.pix.tipo}
-          {SITE.pix.titular && <> · titular: {SITE.pix.titular}</>}. Confira o nome do titular no
-          seu banco antes de confirmar.
-        </p>
-        <CopiarPix chave={SITE.pix.chave} client:visible />
+        <h3 class="mt-0!">Apoie com Pix</h3>
+        <div class="mt-3 flex flex-col gap-5 sm:flex-row sm:items-start">
+          <QrPix chave={SITE.pix.chave} nome={SITE.pix.titular} cidade={SITE.pix.cidade} />
+          <div class="min-w-0">
+            <p class="mt-0! text-sm text-suave">
+              No computador, escaneie o QR code com o celular. No celular, copie a chave{' '}
+              {SITE.pix.tipo} e cole na área Pix do seu banco. Você escolhe o valor.
+            </p>
+            <CopiarPix chave={SITE.pix.chave} client:visible />
+            <p class="mt-3! text-sm text-suave">
+              Titular: {SITE.pix.titular}. Confira esse nome no app do banco antes de confirmar.
+            </p>
+          </div>
+        </div>
       </section>
     )}
 
