@@ -199,8 +199,8 @@
   {
     "id": "voucher-educacional",
     "tema": "educacao",
-    "titulo": "Quando faltar vaga na escola pública, o governo deve pagar uma vaga em escola particular",
-    "explicacao": "A proposta é dar à família um vale (voucher) para matricular o filho em uma escola particular credenciada quando não houver vaga na rede pública. Defensores dizem que nenhuma criança pode ficar sem estudar esperando vaga. Críticos dizem que isso tira dinheiro da escola pública e que é difícil fiscalizar a qualidade das escolas conveniadas.",
+    "titulo": "Quando faltar vaga em creche ou escola pública, o governo deve pagar a vaga em uma instituição particular",
+    "explicacao": "A proposta é dar à família um vale (voucher) para matricular a criança em uma creche particular credenciada, ou em outra escola, enquanto não houver vaga na rede pública. No Brasil, a falta de vagas é mais comum nas creches. Defensores dizem que nenhuma criança pode ficar sem estudar esperando vaga e que, assim, os pais, principalmente as mães, podem trabalhar. Críticos dizem que isso tira dinheiro da rede pública, que o valor do vale pode não cobrir uma escola de qualidade e que é difícil fiscalizar as instituições credenciadas.",
     "posicoes": {
       "lula": {
         "valor": "sem_posicao",
@@ -209,6 +209,13 @@
       "flavio": {
         "valor": "a_favor",
         "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=21",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 21,
+            "acessadoEm": "2026-10-05"
+          },
           {
             "tipo": "plano_tse",
             "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=36",
