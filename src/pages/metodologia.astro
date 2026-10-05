@@ -31,7 +31,7 @@ const testesCalculo = `${SITE.repositorio}/blob/main/src/lib/afinidade.test.ts`;
       A base são os{' '}
       <a href={indiceTse} rel="noopener noreferrer">
         planos de governo registrados no TSE
-      </a>
+      </a>{' '}
       pelos candidatos do {SITE.eleicao}. Os dois planos foram lidos com o mesmo critério. Cada
       afirmação do quiz aponta a página exata do plano em que a posição aparece.
     </p>
@@ -55,7 +55,7 @@ const testesCalculo = `${SITE.repositorio}/blob/main/src/lib/afinidade.test.ts`;
         igualmente não ajudam a comparar e ficaram de fora.
       </li>
       <li>
-        Equilibramos a quantidade de posições de cada um:
+        Equilibramos a quantidade de posições de cada um:{' '}
         {contagem.map((c, i) => (
           <>
             {i > 0 && ' e '}

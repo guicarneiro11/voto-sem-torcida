@@ -14,13 +14,15 @@
     "lint": "eslint .",
     "test": "vitest run",
     "format": "prettier --write .",
-    "verificar:lancamento": "node scripts/verificar-lancamento.mjs"
+    "verificar:lancamento": "node scripts/verificar-lancamento.mjs",
+    "verificar:texto": "node scripts/verificar-texto.mjs"
   },
   "dependencies": {
     "@astrojs/svelte": "^9.0.1",
     "@fontsource-variable/fraunces": "^5.3.0",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.3.5",
+    "qrcode": "^1.5.4",
     "svelte": "^5.57.1",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3"
@@ -32,6 +34,7 @@
     "@astrojs/check": "^0.9.10",
     "@eslint/js": "^10.0.1",
     "@types/node": "^26.6.4",
+    "@types/qrcode": "^1.5.6",
     "eslint": "^10.11.0",
     "eslint-plugin-astro": "^3.2.1",
     "eslint-plugin-svelte": "^3.23.0",

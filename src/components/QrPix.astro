@@ -1,0 +1,28 @@
+---
+import QRCode from 'qrcode';
+import { gerarPixCopiaECola } from '../lib/pix';
+
+interface Props {
+  chave: string;
+  nome: string;
+  cidade: string;
+}
+
+const { chave, nome, cidade } = Astro.props;
+const payload = gerarPixCopiaECola({ chave, nome, cidade });
+
+// Gerado no build: vira SVG estático no HTML, sem script e sem estilo inline (CSP intacta).
+const svg = await QRCode.toString(payload, {
+  type: 'svg',
+  errorCorrectionLevel: 'M',
+  margin: 1,
+  color: { dark: '#1d1b24', light: '#ffffff' },
+});
+---
+
+<figure class="m-0 w-44 shrink-0 rounded-lg border border-linha bg-white p-2">
+  <div class="aspect-square" role="img" aria-label="QR code do Pix" set:html={svg} />
+  <figcaption class="mt-1 text-center text-xs text-suave">
+    Aponte a câmera do app do banco
+  </figcaption>
+</figure>
