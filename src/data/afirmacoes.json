@@ -82,8 +82,8 @@
   {
     "id": "fim-escala-6x1",
     "tema": "trabalho",
-    "titulo": "A lei deve acabar com a escala 6x1 e reduzir a jornada máxima para 40 horas semanais, sem corte de salário",
-    "explicacao": "Hoje a lei permite até 44 horas de trabalho por semana, e muitos trabalhadores folgam só um dia a cada seis trabalhados (a escala 6x1). A proposta reduziria o limite para 40 horas, com dois dias de folga, mantendo o salário. Defensores falam em mais descanso e qualidade de vida; críticos dizem que o custo maior para as empresas pode reduzir vagas ou aumentar preços.",
+    "titulo": "A jornada máxima de trabalho deve cair de 44 para 40 horas por semana, sem redução de salário",
+    "explicacao": "Hoje a lei permite até 44 horas de trabalho por semana, o que leva muitas empresas a usar a escala 6x1 (seis dias de trabalho para um de folga). Com o limite de 40 horas, essa escala deixaria de ser possível na maioria dos casos, e o salário teria que ser mantido. Defensores falam em mais descanso e qualidade de vida; críticos dizem que o custo maior para as empresas pode reduzir vagas ou aumentar preços.",
     "posicoes": {
       "lula": {
         "valor": "a_favor",

@@ -83,6 +83,7 @@
 
   const opcoes: { valor: RespostaEleitor; rotulo: string; simbolo: string }[] = [
     { valor: 'concordo', rotulo: 'Concordo', simbolo: '✓' },
+    { valor: 'em_partes', rotulo: 'Em partes', simbolo: '◐' },
     { valor: 'discordo', rotulo: 'Discordo', simbolo: '✕' },
     { valor: 'tanto_faz', rotulo: 'Tanto faz', simbolo: '–' },
   ];
@@ -155,7 +156,7 @@
     </h2>
     <p class="text-suave mt-4 leading-relaxed">{atual.explicacao}</p>
 
-    <div class="mt-8 grid gap-3 sm:grid-cols-3" role="group" aria-label="Sua resposta">
+    <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4" role="group" aria-label="Sua resposta">
       {#each opcoes as opcao (opcao.valor)}
         {@const marcada = respostas[atual.id] === opcao.valor}
         <button

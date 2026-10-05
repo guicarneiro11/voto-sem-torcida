@@ -60,7 +60,10 @@
     const r = respostas[afirmacao.id];
     const p = afirmacao.posicoes[candidatoId]?.valor;
     if (!r || r === 'tanto_faz' || !p || p === 'sem_posicao') return null;
-    if (p === 'neutro') return 'parcial';
+    const rNeutra = r === 'em_partes';
+    const pNeutra = p === 'neutro';
+    if (rNeutra && pNeutra) return 'igual';
+    if (rNeutra || pNeutra) return 'parcial';
     return (r === 'concordo') === (p === 'a_favor') ? 'igual' : 'oposto';
   }
 

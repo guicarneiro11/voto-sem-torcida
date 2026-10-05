@@ -15,6 +15,7 @@ export const ROTULO_TEMA: Record<string, string> = {
 
 export const ROTULO_RESPOSTA: Record<RespostaEleitor, string> = {
   concordo: 'Concordo',
+  em_partes: 'Em partes',
   discordo: 'Discordo',
   tanto_faz: 'Tanto faz',
 };

@@ -7,6 +7,9 @@
  *   - posições opostas ......... 0 pontos
  *   - afirmação marcada como importante vale o dobro
  *
+ * Respostas do eleitor: "concordo", "em partes" (neutro, conta no cálculo como meio-termo),
+ * "discordo" e "tanto faz" (ausência de opinião, não conta).
+ *
  * Regras de justiça (cobertas por testes em afinidade.test.ts):
  *   1. "Tanto faz" não é uma opinião: a afirmação sai do cálculo.
  *   2. "Sem posição" de um candidato não o penaliza: a afirmação sai do cálculo SÓ para ele.
@@ -15,7 +18,7 @@
  *   5. A função é pura: não lê nem grava nada fora dos parâmetros.
  */
 
-export type RespostaEleitor = 'concordo' | 'discordo' | 'tanto_faz';
+export type RespostaEleitor = 'concordo' | 'em_partes' | 'discordo' | 'tanto_faz';
 export type PosicaoCandidato = 'a_favor' | 'contra' | 'neutro' | 'sem_posicao';
 
 export interface AfirmacaoParaCalculo {
@@ -51,6 +54,7 @@ export interface ResultadoAfinidade {
 
 const VALOR_ELEITOR: Record<Exclude<RespostaEleitor, 'tanto_faz'>, number> = {
   concordo: 1,
+  em_partes: 0, // concorda com uma parte: meio caminho entre concordar e discordar
   discordo: -1,
 };
 
