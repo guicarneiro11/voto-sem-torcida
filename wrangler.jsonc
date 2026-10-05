@@ -8,7 +8,7 @@
     { "pattern": "www.votosemtorcida.com.br", "custom_domain": true }
   ],
   // Endereço de teste. Mudar para false depois de confirmar que o domínio funciona.
-  "workers_dev": true,
+  "workers_dev": false,
   // Só a versão de produção fica acessível; versões antigas não ganham endereço público.
   "preview_urls": false,
   // Só arquivos estáticos: nenhum código roda no servidor (e não há custo por requisição).
