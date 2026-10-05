@@ -155,6 +155,50 @@ describe('regras de justiça', () => {
   });
 });
 
+describe('resposta "em partes"', () => {
+  it('vale metade dos pontos contra uma posição definida, igual para os dois lados', () => {
+    const afirmacoes = [afirmacao('m', 'a_favor', 'contra')];
+    const resultado = calcularAfinidade({
+      candidatoIds: IDS,
+      afirmacoes,
+      respostas: { m: 'em_partes' },
+    });
+    expect(resultado.candidatos.map((c) => c.percentual)).toEqual([50, 50]);
+    expect(resultado.lideres).toEqual([A, B].sort());
+  });
+
+  it('vale os pontos completos contra uma posição neutra', () => {
+    const afirmacoes = [afirmacao('m', 'neutro', 'a_favor')];
+    expect(percentual({ candidatoIds: IDS, afirmacoes, respostas: { m: 'em_partes' } }, A)).toBe(
+      100,
+    );
+  });
+
+  it('conta no cálculo, ao contrário de "tanto faz"', () => {
+    const afirmacoes = BASE.slice(0, 2);
+    const comEmPartes = calcularAfinidade({
+      candidatoIds: IDS,
+      afirmacoes,
+      respostas: { x1: 'concordo', x2: 'em_partes' },
+    });
+    const comTantoFaz = calcularAfinidade({
+      candidatoIds: IDS,
+      afirmacoes,
+      respostas: { x1: 'concordo', x2: 'tanto_faz' },
+    });
+    expect(comEmPartes.respondidas).toBe(2);
+    expect(comTantoFaz.respondidas).toBe(1);
+    expect(comEmPartes.candidatos[0]?.percentual).toBe(75); // 2 + 1 de 4
+    expect(comTantoFaz.candidatos[0]?.percentual).toBe(100); // 2 de 2
+  });
+
+  it('respostas "em partes" em tudo resultam em empate exato', () => {
+    const respostas = Object.fromEntries(BASE.map((a) => [a.id, 'em_partes' as const]));
+    const resultado = calcularAfinidade({ candidatoIds: IDS, afirmacoes: BASE, respostas });
+    expect(resultado.lideres).toEqual([A, B].sort());
+  });
+});
+
 describe('casos de borda', () => {
   it('sem nenhuma resposta válida, ninguém tem percentual nem lidera', () => {
     const resultado = calcularAfinidade({ candidatoIds: IDS, afirmacoes: BASE, respostas: {} });
