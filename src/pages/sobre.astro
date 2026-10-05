@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import CopiarPix from '../components/CopiarPix.svelte';
+import { SITE } from '../data/site';
+---
+
+<Base
+  title="Sobre"
+  description="Quem faz o Voto sem Torcida, como ele é financiado e como sugerir correções."
+>
+  <article class="prosa">
+    <p class="text-sm font-semibold tracking-wide text-acento uppercase">Sobre</p>
+    <h1 class="mt-3 text-4xl leading-tight font-semibold">Por que este projeto existe</h1>
+    <p class="text-lg text-suave">
+      Em época de eleição, muita gente escolhe candidato como escolhe time de futebol. O Voto sem
+      Torcida tira a camisa da disputa: você avalia as propostas sem saber de quem são e só depois
+      descobre de quem suas opiniões se aproximam.
+    </p>
+
+    <h2>Quem faz</h2>
+    <p>
+      O projeto é feito de forma voluntária por {SITE.responsavel}, desenvolvedor de software, sem
+      vínculo com partidos, candidaturas, campanhas, governos ou veículos de imprensa. A ideia foi
+      inspirada em ferramentas usadas há décadas na Europa, como o Wahl-O-Mat (Alemanha) e o
+      StemWijzer (Holanda).
+    </p>
+
+    <h2>Independência e financiamento</h2>
+    <ul>
+      <li>O site é gratuito, sem anúncios e sem patrocínio.</li>
+      <li>
+        Os custos são baixos (domínio e manutenção) e podem ser cobertos por doações voluntárias via
+        PIX.
+      </li>
+      <li>
+        <strong>
+          Não aceitamos doações de partidos, candidatos, campanhas ou pessoas ligadas a elas.
+        </strong>
+        Se uma doação assim for identificada, ela será devolvida.
+      </li>
+      <li>Doar não dá direito a influenciar nenhum conteúdo.</li>
+    </ul>
+
+    {SITE.pix.chave && (
+      <section class="mt-6 rounded-xl border border-linha bg-cartao p-6">
+        <h3 class="mt-0!">Apoie com PIX</h3>
+        <p class="mt-2! text-sm text-suave">
+          Chave {SITE.pix.tipo}
+          {SITE.pix.titular && <> · titular: {SITE.pix.titular}</>}. Confira o nome do titular no
+          seu banco antes de confirmar.
+        </p>
+        <CopiarPix chave={SITE.pix.chave} client:visible />
+      </section>
+    )}
+
+    <h2>Correções</h2>
+    <p>
+      Errar é possível, e corrigir rápido é obrigação. Se você encontrou uma posição errada, uma
+      fonte quebrada ou um texto que soa tendencioso,{' '}
+      <a href={`${SITE.repositorio}/issues/new`} rel="noopener noreferrer">
+        abra uma correção pública
+      </a>{' '}
+      com o link da fonte, ou escreva para {SITE.contato}. Toda mudança fica registrada no histórico
+      do código.
+    </p>
+
+    <h2>Código aberto</h2>
+    <p>
+      Todo o conteúdo e o código estão{' '}
+      <a href={SITE.repositorio} rel="noopener noreferrer">
+        publicados no GitHub
+      </a>
+      . O rodapé de cada página mostra a versão publicada, para qualquer pessoa conferir que o site
+      no ar é igual ao que está no repositório.
+    </p>
+  </article>
+</Base>

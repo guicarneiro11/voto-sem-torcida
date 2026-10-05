@@ -1,1 +1,97 @@
 @import 'tailwindcss';
+@import '@fontsource-variable/fraunces';
+
+/*
+ * Identidade "papel e tinta": tons de jornal impresso, sem nenhuma cor associada
+ * a partidos (vermelho, verde-amarelo, azul). O único acento é um violeta neutro.
+ */
+@theme {
+  --font-display: 'Fraunces Variable', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  --color-papel: #f6f3ec;
+  --color-cartao: #fffdf8;
+  --color-tinta: #1d1b24;
+  --color-suave: #5c5966;
+  --color-linha: #dcd6c9;
+  --color-acento: #4a3db8;
+  --color-acento-forte: #372c94;
+  --color-acento-claro: #e9e6fa;
+  --color-aviso: #8a5a00;
+  --color-aviso-claro: #fbf1dc;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-papel);
+    color: var(--color-tinta);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    letter-spacing: -0.01em;
+  }
+  a {
+    text-underline-offset: 3px;
+  }
+  :focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* Texto longo das páginas institucionais */
+.prosa {
+  line-height: 1.7;
+}
+.prosa h2 {
+  margin-top: 2.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.prosa h3 {
+  margin-top: 1.75rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.prosa p,
+.prosa ul,
+.prosa ol {
+  margin-top: 1rem;
+}
+.prosa ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+}
+.prosa ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+.prosa li + li {
+  margin-top: 0.4rem;
+}
+.prosa a {
+  color: var(--color-acento);
+  text-decoration: underline;
+}
+.prosa table {
+  margin-top: 1rem;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.prosa th,
+.prosa td {
+  border-bottom: 1px solid var(--color-linha);
+  padding: 0.5rem 0.5rem 0.5rem 0;
+  text-align: left;
+  vertical-align: top;
+}

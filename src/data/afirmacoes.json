@@ -2,18 +2,18 @@
   {
     "id": "arcabouco-fiscal",
     "tema": "economia",
-    "titulo": "O Brasil deve manter o arcabouço fiscal atual",
-    "explicacao": "[EXEMPLO, revisar] O arcabouço fiscal é a regra que limita quanto os gastos do governo podem crescer a cada ano, de acordo com o quanto ele arrecada.",
+    "titulo": "O governo deve manter o arcabouço fiscal, a regra atual que limita o crescimento dos gastos",
+    "explicacao": "O arcabouço fiscal, em vigor desde 2023, limita quanto os gastos do governo federal podem crescer a cada ano, de acordo com o aumento da arrecadação. Quem defende mantê-lo diz que ele equilibra o controle das contas com o investimento social. Quem quer trocá-lo diz que a regra é frouxa e que é preciso um limite mais rígido para reduzir a dívida pública.",
     "posicoes": {
       "lula": {
         "valor": "a_favor",
         "fontes": [
           {
             "tipo": "plano_tse",
-            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=6",
-            "veiculo": "TSE",
-            "pagina": 6,
-            "acessadoEm": "2026-09-30"
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=49",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 49,
+            "acessadoEm": "2026-10-05"
           }
         ]
       },
@@ -22,10 +22,10 @@
         "fontes": [
           {
             "tipo": "plano_tse",
-            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=70",
-            "veiculo": "TSE",
-            "pagina": 70,
-            "acessadoEm": "2026-09-30"
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=71",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 71,
+            "acessadoEm": "2026-10-05"
           }
         ]
       }
@@ -35,7 +35,7 @@
     "id": "maioridade-penal-16",
     "tema": "seguranca",
     "titulo": "A maioridade penal deve cair de 18 para 16 anos",
-    "explicacao": "[EXEMPLO, revisar] Hoje, quem tem menos de 18 anos e comete um crime responde pelo Estatuto da Criança e do Adolescente. A mudança faria jovens de 16 e 17 anos responderem como adultos. Exige mudar a Constituição.",
+    "explicacao": "Hoje, quem tem menos de 18 anos e comete um crime responde pelo Estatuto da Criança e do Adolescente, que prevê medidas como a internação. Com a mudança, jovens de 16 e 17 anos seriam julgados e presos como adultos, o que depende de alterar a Constituição. Defensores falam em punir crimes graves; críticos alertam para jovens sendo recrutados pelo crime dentro das prisões.",
     "posicoes": {
       "lula": {
         "valor": "sem_posicao",
@@ -47,29 +47,242 @@
           {
             "tipo": "plano_tse",
             "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=13",
-            "veiculo": "TSE",
+            "veiculo": "Plano de governo (TSE)",
             "pagina": 13,
-            "acessadoEm": "2026-09-30"
+            "acessadoEm": "2026-10-05"
           }
         ]
       }
     }
   },
   {
-    "id": "ministerio-seguranca",
-    "tema": "seguranca",
-    "titulo": "O governo federal deve criar um Ministério da Segurança Pública",
-    "explicacao": "[EXEMPLO, revisar] Um ministério próprio coordenaria o combate ao crime organizado junto com estados e municípios. Hoje essa área faz parte do Ministério da Justiça.",
+    "id": "pe-de-meia",
+    "tema": "educacao",
+    "titulo": "O governo deve manter o pagamento a estudantes de baixa renda do ensino médio para que não abandonem a escola",
+    "explicacao": "O Pé-de-Meia deposita valores mensais e uma poupança para estudantes de baixa renda do ensino médio público que mantêm a frequência e concluem as etapas. Defensores dizem que o programa reduz a evasão escolar. Críticos questionam o custo para as contas públicas e a forma como o programa é financiado.",
     "posicoes": {
       "lula": {
         "valor": "a_favor",
         "fontes": [
           {
             "tipo": "plano_tse",
-            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=26",
-            "veiculo": "TSE",
-            "pagina": 26,
-            "acessadoEm": "2026-09-30"
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=32",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 32,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      },
+      "flavio": {
+        "valor": "sem_posicao",
+        "fontes": []
+      }
+    }
+  },
+  {
+    "id": "fim-escala-6x1",
+    "tema": "trabalho",
+    "titulo": "A lei deve acabar com a escala 6x1 e reduzir a jornada máxima para 40 horas semanais, sem corte de salário",
+    "explicacao": "Hoje a lei permite até 44 horas de trabalho por semana, e muitos trabalhadores folgam só um dia a cada seis trabalhados (a escala 6x1). A proposta reduziria o limite para 40 horas, com dois dias de folga, mantendo o salário. Defensores falam em mais descanso e qualidade de vida; críticos dizem que o custo maior para as empresas pode reduzir vagas ou aumentar preços.",
+    "posicoes": {
+      "lula": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=73",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 73,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      },
+      "flavio": {
+        "valor": "contra",
+        "fontes": [
+          {
+            "tipo": "declaracao",
+            "url": "https://www.opovo.com.br/agencia/bbc/2026/06/08/pec-da-liberdade-ou-escravidao-o-que-pode-mudar-no-regime-de-trabalho-por-hora-proposto-por-flavio-bolsonaro-para-barrar-fim-da-6x1.html",
+            "veiculo": "BBC News Brasil",
+            "acessadoEm": "2026-10-05"
+          },
+          {
+            "tipo": "declaracao",
+            "url": "https://www.poder360.com.br/poder-eleicoes-2026/flavio-deixa-fim-da-escala-6-x-1-fora-do-plano-de-governo/",
+            "veiculo": "Poder360",
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "privatizacoes",
+    "tema": "economia",
+    "titulo": "O governo deve voltar a vender empresas estatais quando avaliar que elas não precisam ser públicas",
+    "explicacao": "Privatizar é vender para a iniciativa privada uma empresa que hoje pertence ao governo. Defensores dizem que empresas privadas tendem a ser mais eficientes e que o dinheiro da venda ajuda as contas públicas. Críticos dizem que o país pode perder o controle sobre serviços estratégicos e que os preços para a população podem subir.",
+    "posicoes": {
+      "lula": {
+        "valor": "sem_posicao",
+        "fontes": []
+      },
+      "flavio": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=70",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 70,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "cameras-corporais",
+    "tema": "seguranca",
+    "titulo": "Policiais devem usar câmeras no uniforme durante o trabalho",
+    "explicacao": "As câmeras corporais gravam a atuação do policial durante o turno. Defensores dizem que elas reduzem abusos, protegem o próprio policial de acusações falsas e servem como prova na Justiça. Críticos dizem que o custo é alto e que a gravação pode inibir a ação policial em situações de risco.",
+    "posicoes": {
+      "lula": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=30",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 30,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      },
+      "flavio": {
+        "valor": "sem_posicao",
+        "fontes": []
+      }
+    }
+  },
+  {
+    "id": "regular-redes",
+    "tema": "estado",
+    "titulo": "As redes sociais devem ter obrigações definidas em lei para combater desinformação e discurso de ódio",
+    "explicacao": "A ideia é criar regras para que plataformas digitais, como redes sociais e aplicativos de mensagem, sejam responsabilizadas por conteúdos nocivos, como desinformação e ataques de ódio. Defensores dizem que isso protege a democracia e as pessoas. Críticos dizem que deixar o Estado definir o que é desinformação abre espaço para a censura de opiniões.",
+    "posicoes": {
+      "lula": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=16",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 16,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      },
+      "flavio": {
+        "valor": "contra",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=66",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 66,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "voucher-educacional",
+    "tema": "educacao",
+    "titulo": "Quando faltar vaga na escola pública, o governo deve pagar uma vaga em escola particular",
+    "explicacao": "A proposta é dar à família um vale (voucher) para matricular o filho em uma escola particular credenciada quando não houver vaga na rede pública. Defensores dizem que nenhuma criança pode ficar sem estudar esperando vaga. Críticos dizem que isso tira dinheiro da escola pública e que é difícil fiscalizar a qualidade das escolas conveniadas.",
+    "posicoes": {
+      "lula": {
+        "valor": "sem_posicao",
+        "fontes": []
+      },
+      "flavio": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=36",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 36,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "demarcacao-indigena",
+    "tema": "meio-ambiente",
+    "titulo": "O governo deve continuar demarcando terras indígenas",
+    "explicacao": "Demarcar é reconhecer oficialmente que uma área é de uso de um povo indígena, o que impede outras atividades ali sem autorização. Defensores dizem que é um direito previsto na Constituição e que ajuda a proteger a floresta. Críticos dizem que o processo gera insegurança para produtores rurais que já ocupam essas áreas.",
+    "posicoes": {
+      "lula": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=20",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 20,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      },
+      "flavio": {
+        "valor": "sem_posicao",
+        "fontes": []
+      }
+    }
+  },
+  {
+    "id": "fim-reeleicao",
+    "tema": "estado",
+    "titulo": "Presidentes não devem poder disputar a reeleição para um segundo mandato seguido",
+    "explicacao": "Desde 1997, presidentes, governadores e prefeitos podem disputar um segundo mandato seguido. Acabar com isso exigiria mudar a Constituição. Defensores dizem que quem governa deixaria de usar o cargo para fazer campanha. Críticos dizem que quatro anos é pouco para concluir projetos e que o eleitor deveria poder reconduzir quem aprova.",
+    "posicoes": {
+      "lula": {
+        "valor": "sem_posicao",
+        "fontes": []
+      },
+      "flavio": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=66",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 66,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "controle-armas",
+    "tema": "seguranca",
+    "titulo": "As regras para cidadãos comprarem e portarem armas de fogo devem continuar rígidas",
+    "explicacao": "As regras para civis comprarem armas e munições mudaram várias vezes nos últimos anos: ficaram mais flexíveis entre 2019 e 2022 e mais rígidas a partir de 2023. Defensores do controle dizem que menos armas em circulação reduzem mortes e abastecem menos o crime. Quem defende regras mais flexíveis fala no direito do cidadão de se defender.",
+    "posicoes": {
+      "lula": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=28",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 28,
+            "acessadoEm": "2026-10-05"
           }
         ]
       },
@@ -83,7 +296,7 @@
     "id": "cortar-ministerios",
     "tema": "estado",
     "titulo": "O governo federal deve cortar pelo menos 10 ministérios",
-    "explicacao": "[EXEMPLO, revisar] Menos ministérios significa juntar áreas do governo sob o mesmo comando, com a intenção de reduzir gastos e cargos. Os críticos dizem que algumas áreas podem perder atenção.",
+    "explicacao": "Cortar ministérios significa juntar áreas do governo sob um mesmo comando. Defensores dizem que isso reduz gastos, cargos e burocracia. Críticos dizem que a economia é pequena perto do orçamento total e que algumas áreas podem perder atenção.",
     "posicoes": {
       "lula": {
         "valor": "sem_posicao",
@@ -95,35 +308,115 @@
           {
             "tipo": "plano_tse",
             "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=69",
-            "veiculo": "TSE",
+            "veiculo": "Plano de governo (TSE)",
             "pagina": 69,
-            "acessadoEm": "2026-09-30"
+            "acessadoEm": "2026-10-05"
           }
         ]
       }
     }
   },
   {
-    "id": "regular-redes",
-    "tema": "estado",
-    "titulo": "As redes sociais e plataformas digitais devem ter regras definidas por lei",
-    "explicacao": "[EXEMPLO, revisar] Regular as plataformas significa criar obrigações por lei, por exemplo sobre remoção de conteúdo ilegal e transparência. Os defensores falam em proteção contra abusos; os críticos, em risco à liberdade de expressão.",
+    "id": "imposto-renda-alta-renda",
+    "tema": "impostos",
+    "titulo": "Quem tem renda muito alta deve pagar mais Imposto de Renda para que quem ganha menos pague menos",
+    "explicacao": "Desde 2026, quem ganha até R$ 5 mil por mês não paga Imposto de Renda, e pessoas com rendas muito altas passaram a pagar um imposto mínimo. A proposta é seguir nesse caminho. Defensores dizem que é justo quem ganha mais contribuir mais. Críticos dizem que impostos altos sobre a renda afastam investimentos e que o problema do país é o gasto público, não a falta de arrecadação.",
     "posicoes": {
       "lula": {
         "valor": "a_favor",
         "fontes": [
           {
             "tipo": "plano_tse",
-            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=16",
-            "veiculo": "TSE",
-            "pagina": 16,
-            "acessadoEm": "2026-09-30"
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=18",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 18,
+            "acessadoEm": "2026-10-05"
           }
         ]
       },
       "flavio": {
         "valor": "sem_posicao",
         "fontes": []
+      }
+    }
+  },
+  {
+    "id": "escolas-civico-militares",
+    "tema": "educacao",
+    "titulo": "O governo federal deve ampliar as escolas cívico-militares",
+    "explicacao": "Nas escolas cívico-militares, a parte pedagógica fica com os professores, e a disciplina e a organização ficam com militares ou policiais da reserva. Defensores citam mais ordem e notas melhores onde o modelo foi adotado. Críticos dizem que os resultados vêm do investimento maior, e não do modelo, e questionam o papel de militares na educação.",
+    "posicoes": {
+      "lula": {
+        "valor": "sem_posicao",
+        "fontes": []
+      },
+      "flavio": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=35",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 35,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "ministerio-seguranca",
+    "tema": "seguranca",
+    "titulo": "O governo federal deve criar um Ministério da Segurança Pública",
+    "explicacao": "Hoje a segurança pública federal faz parte do Ministério da Justiça, e as polícias que atuam nas ruas são principalmente dos estados. Um ministério próprio coordenaria o combate ao crime organizado com estados e municípios. Defensores falam em mais foco e integração; críticos dizem que criar uma estrutura nova não resolve o problema e aumenta gastos.",
+    "posicoes": {
+      "lula": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=30",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 30,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      },
+      "flavio": {
+        "valor": "sem_posicao",
+        "fontes": []
+      }
+    }
+  },
+  {
+    "id": "rever-reforma-tributaria",
+    "tema": "impostos",
+    "titulo": "A reforma tributária aprovada em 2023 deve ser revista para reduzir o imposto sobre o consumo",
+    "explicacao": "A reforma tributária está trocando cinco impostos sobre o consumo por dois novos, numa transição que vai até 2033. Quem quer revê-la diz que a alíquota prevista, perto de 30%, ficará entre as mais altas do mundo. Quem defende mantê-la diz que ela simplifica o sistema, acaba com a guerra fiscal entre estados e isenta a cesta básica.",
+    "posicoes": {
+      "lula": {
+        "valor": "contra",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pt/@@display-file/file/proposta-pt.pdf#page=48",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 48,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
+      },
+      "flavio": {
+        "valor": "a_favor",
+        "fontes": [
+          {
+            "tipo": "plano_tse",
+            "url": "https://www.tse.jus.br/eleicoes/eleicoes-2026-content/arquivos/proposta-pl/@@display-file/file/proposta-pl.pdf#page=30",
+            "veiculo": "Plano de governo (TSE)",
+            "pagina": 30,
+            "acessadoEm": "2026-10-05"
+          }
+        ]
       }
     }
   }

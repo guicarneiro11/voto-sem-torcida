@@ -18,6 +18,11 @@ export default defineConfig(
     },
   },
   {
+    // Scripts de manutenção rodam no Node, não no navegador.
+    files: ['scripts/**/*.mjs'],
+    languageOptions: { globals: { ...globals.node } },
+  },
+  {
     languageOptions: { globals: { ...globals.browser } },
     rules: {
       // Execução de código dinâmico: nunca

@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+---
+
+<Base
+  title="Privacidade"
+  description="O Voto sem Torcida não coleta, não guarda e não envia suas respostas."
+>
+  <article class="prosa">
+    <p class="text-sm font-semibold tracking-wide text-acento uppercase">Privacidade</p>
+    <h1 class="mt-3 text-4xl leading-tight font-semibold">Suas respostas são só suas</h1>
+    <p class="text-lg text-suave">
+      Opinião política é um dado sensível pela Lei Geral de Proteção de Dados (LGPD). Por isso, o
+      site foi construído para nunca precisar dela.
+    </p>
+
+    <h2>O que acontece com as suas respostas</h2>
+    <ul>
+      <li>O cálculo roda inteiramente no seu navegador.</li>
+      <li>Nenhuma resposta é enviada para servidor algum, nem para nós, nem para terceiros.</li>
+      <li>Nada é guardado no aparelho: ao fechar ou recarregar a página, as respostas somem.</li>
+      <li>
+        A imagem de compartilhamento é gerada no seu aparelho. Compartilhar ou não é escolha sua.
+      </li>
+    </ul>
+
+    <h2>O que o site não usa</h2>
+    <ul>
+      <li>Cookies.</li>
+      <li>Ferramentas de análise, rastreamento ou publicidade.</li>
+      <li>Fontes, scripts ou imagens carregados de outros sites.</li>
+    </ul>
+    <p>
+      Essas regras não dependem só de boa vontade: o código tem verificações automáticas que impedem
+      a publicação de qualquer versão que tente enviar ou guardar respostas.
+    </p>
+
+    <h2>Dados técnicos de acesso</h2>
+    <p>
+      O site é hospedado na Cloudflare. Como qualquer servidor da internet, ela recebe dados
+      técnicos de cada acesso (como endereço IP e tipo de navegador) para entregar a página e
+      proteger o site contra ataques. Esses dados não incluem suas respostas. Usamos apenas o painel
+      de estatísticas agregadas da própria Cloudflare (por exemplo, número de visitas por dia), sem
+      identificar ninguém.
+    </p>
+
+    <h2>Links externos</h2>
+    <p>
+      Os links das fontes levam a sites como o do TSE e de veículos de imprensa, que têm políticas
+      de privacidade próprias. Eles abrem sem informar de onde você veio.
+    </p>
+
+    <h2>Contato</h2>
+    <p>Dúvidas sobre privacidade: {SITE.contato}.</p>
+  </article>
+</Base>
