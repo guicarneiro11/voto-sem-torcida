@@ -190,7 +190,7 @@
       class="bg-tinta text-papel hover:bg-acento-forte rounded-lg px-5 py-3 font-semibold transition disabled:opacity-60"
       disabled={compartilhando !== null}
       onclick={() => compartilhar('feed')}
-      >{compartilhando === 'feed' ? 'Gerando imagem…' : 'Compartilhar resultado'}</button
+      >{compartilhando === 'feed' ? 'Gerando imagem…' : 'Imagem para conversas e posts'}</button
     >
     <button
       class="bg-tinta text-papel hover:bg-acento-forte rounded-lg px-5 py-3 font-semibold transition disabled:opacity-60"
