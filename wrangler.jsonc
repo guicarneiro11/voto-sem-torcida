@@ -2,6 +2,13 @@
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "voto-sem-torcida",
   "compatibility_date": "2026-10-01",
+  // Domínio oficial. A Cloudflare cria os registros DNS e o certificado HTTPS no deploy.
+  "routes": [
+    { "pattern": "votosemtorcida.com.br", "custom_domain": true },
+    { "pattern": "www.votosemtorcida.com.br", "custom_domain": true }
+  ],
+  // Endereço de teste. Mudar para false depois de confirmar que o domínio funciona.
+  "workers_dev": true,
   // Só a versão de produção fica acessível; versões antigas não ganham endereço público.
   "preview_urls": false,
   // Só arquivos estáticos: nenhum código roda no servidor (e não há custo por requisição).
