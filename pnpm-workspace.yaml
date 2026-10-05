@@ -1,6 +1,7 @@
 allowBuilds:
   esbuild: true
   sharp: true
+  workerd: false
 minimumReleaseAge: 1440
 # Força a versão corrigida de dependências transitivas com vulnerabilidade conhecida.
 # Remova quando o Astro passar a depender da versão corrigida por conta própria.
