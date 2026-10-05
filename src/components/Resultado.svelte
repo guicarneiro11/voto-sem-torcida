@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { RespostaEleitor, ResultadoAfinidade } from '../lib/afinidade';
-  import { gerarCartao } from '../lib/cartao';
+  import { gerarCartao, type FormatoCartao } from '../lib/cartao';
   import { ROTULO_POSICAO, ROTULO_RESPOSTA, rotuloFonte } from '../lib/rotulos';
   import type { AfirmacaoQuiz, CandidatoQuiz } from '../lib/tipos';
 
@@ -70,22 +70,43 @@
   let titulo: HTMLHeadingElement | undefined = $state();
   $effect(() => titulo?.focus()); // leitores de tela anunciam o resultado ao chegar
 
-  let compartilhando = $state(false);
+  let compartilhando = $state<FormatoCartao | null>(null);
   let erroCompartilhar = $state('');
+  let linkCopiado = $state(false);
 
-  async function compartilhar() {
-    compartilhando = true;
+  // Texto neutro: convida para o quiz sem citar candidato. O resultado vai só na imagem,
+  // e quem compartilha decide se quer mostrá-lo.
+  const convite =
+    'Fiz o Voto sem Torcida: respondi às propostas dos candidatos sem saber de quem eram.';
+  const linkX = $derived(
+    `https://x.com/intent/post?text=${encodeURIComponent(convite)}&url=${encodeURIComponent(endereco)}`,
+  );
+
+  async function copiarLink() {
+    try {
+      await navigator.clipboard.writeText(endereco);
+      linkCopiado = true;
+      setTimeout(() => (linkCopiado = false), 2500);
+    } catch {
+      erroCompartilhar = 'Não foi possível copiar. O endereço é ' + endereco;
+    }
+  }
+
+  async function compartilhar(formato: FormatoCartao) {
+    compartilhando = formato;
     erroCompartilhar = '';
     try {
       const imagem = await gerarCartao({
+        formato,
         manchete,
         linhas: ordenados.map((c) => ({ nome: nomeDe(c.candidatoId), percentual: c.percentual })),
         respondidas: resultado.respondidas,
         total: afirmacoes.length,
         endereco: endereco.replace(/^https?:\/\//, ''),
       });
-      const arquivo = new File([imagem], 'voto-sem-torcida.png', { type: 'image/png' });
-      const texto = `Fiz o Voto sem Torcida: respondi às propostas sem saber de quem eram. Faça o seu: ${endereco}`;
+      const nome = formato === 'stories' ? 'voto-sem-torcida-stories.png' : 'voto-sem-torcida.png';
+      const arquivo = new File([imagem], nome, { type: 'image/png' });
+      const texto = `${convite} Faça o seu: ${endereco}`;
 
       if (navigator.canShare?.({ files: [arquivo] })) {
         await navigator.share({ files: [arquivo], text: texto });
@@ -102,7 +123,7 @@
         erroCompartilhar = 'Não foi possível gerar a imagem neste navegador.';
       }
     } finally {
-      compartilhando = false;
+      compartilhando = null;
     }
   }
 </script>
@@ -164,21 +185,43 @@
     {/each}
   </ul>
 
-  <div class="mt-6 flex flex-wrap gap-3">
+  <div class="mt-6 grid gap-3 sm:grid-cols-2">
     <button
       class="bg-tinta text-papel hover:bg-acento-forte rounded-lg px-5 py-3 font-semibold transition disabled:opacity-60"
-      disabled={compartilhando}
-      onclick={compartilhar}>{compartilhando ? 'Gerando imagem…' : 'Compartilhar resultado'}</button
+      disabled={compartilhando !== null}
+      onclick={() => compartilhar('feed')}
+      >{compartilhando === 'feed' ? 'Gerando imagem…' : 'Compartilhar resultado'}</button
+    >
+    <button
+      class="bg-tinta text-papel hover:bg-acento-forte rounded-lg px-5 py-3 font-semibold transition disabled:opacity-60"
+      disabled={compartilhando !== null}
+      onclick={() => compartilhar('stories')}
+      >{compartilhando === 'stories' ? 'Gerando imagem…' : 'Imagem para Stories'}</button
+    >
+    <a
+      class="border-linha hover:border-tinta rounded-lg border-2 px-5 py-3 text-center font-semibold"
+      href={linkX}
+      target="_blank"
+      rel="noopener noreferrer">Postar no X</a
     >
     <button
       class="border-linha hover:border-tinta rounded-lg border-2 px-5 py-3 font-semibold"
-      onclick={onRecomecar}>Refazer o teste</button
+      onclick={copiarLink}>{linkCopiado ? 'Link copiado ✓' : 'Copiar link do site'}</button
     >
   </div>
+  <span class="sr-only" aria-live="polite">{linkCopiado ? 'Link copiado' : ''}</span>
   {#if erroCompartilhar}
     <p class="text-aviso mt-2 text-sm" role="alert">{erroCompartilhar}</p>
   {/if}
-  <p class="text-suave mt-2 text-sm">A imagem é gerada no seu aparelho. Nada é enviado para nós.</p>
+  <p class="text-suave mt-2 text-sm">
+    As imagens são geradas no seu aparelho. Nada é enviado para nós. No computador, elas são
+    baixadas para você anexar onde quiser.
+  </p>
+
+  <button
+    class="border-linha hover:border-tinta mt-6 rounded-lg border-2 px-5 py-3 font-semibold"
+    onclick={onRecomecar}>Refazer o teste</button
+  >
 
   <h2 class="mt-14 text-2xl font-semibold">Onde você concordou e discordou</h2>
   <p class="text-suave mt-2">
