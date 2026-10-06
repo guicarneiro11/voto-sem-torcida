@@ -7,3 +7,4 @@ minimumReleaseAge: 1440
 # Remova quando o Astro passar a depender da versão corrigida por conta própria.
 overrides:
   http-cache-semantics: '>=4.3.0'
+  source-map-js: '>=1.2.2'
