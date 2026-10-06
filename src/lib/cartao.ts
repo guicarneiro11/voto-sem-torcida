@@ -87,7 +87,11 @@ export async function gerarCartao(dados: DadosCartao): Promise<Blob> {
     y += 92;
   }
 
-  y += 50;
+  y += 40;
+  ctx.fillStyle = COR.suave;
+  ctx.font = `400 32px ${SANS}`;
+  ctx.fillText('Quanto concordo com as posições de cada um:', margem, y);
+  y += 80;
   for (const item of dados.linhas) {
     ctx.fillStyle = COR.tinta;
     ctx.font = `600 44px ${SANS}`;
@@ -107,11 +111,12 @@ export async function gerarCartao(dados: DadosCartao): Promise<Blob> {
   ctx.fillStyle = COR.suave;
   ctx.font = `400 32px ${SANS}`;
   const rodape = [
+    'Cada percentual é calculado à parte: eles não somam 100%.',
     `Resultado baseado em ${dados.respondidas} de ${dados.total} propostas.`,
     'Não é recomendação de voto: só mostra a proximidade entre',
     'minhas respostas e os planos de governo registrados no TSE.',
   ];
-  let yr = fim - 260;
+  let yr = fim - 306;
   for (const linha of rodape) {
     ctx.fillText(linha, margem, yr);
     yr += 46;
