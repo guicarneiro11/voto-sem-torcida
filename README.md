@@ -84,6 +84,12 @@ As afirmações ficam em [`src/data/afirmacoes.json`](src/data/afirmacoes.json),
 
 Os candidatos são definidos em [`src/data/candidatos.ts`](src/data/candidatos.ts).
 
+## Licença
+
+- **Código:** [MIT](LICENSE).
+- **Conteúdo** (afirmações, explicações e textos do site): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pt-br). Você pode reutilizar, desde que cite o Voto sem Torcida como fonte.
+- **Nome:** versões modificadas não devem usar o nome "Voto sem Torcida" nem se apresentar como o site original.
+
 ## Inspiração
 
 [Wahl-O-Mat](https://www.wahl-o-mat.de/) (Alemanha, Bundeszentrale für politische Bildung) e [StemWijzer](https://stemwijzer.nl/) (Holanda, ProDemos).
