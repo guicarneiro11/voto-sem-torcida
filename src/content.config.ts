@@ -7,7 +7,7 @@ import { CANDIDATO_IDS } from './data/candidatos';
 // o BUILD FALHA: conteúdo sem fonte nunca chega em produção.
 const fonte = z
   .object({
-    tipo: z.enum(['plano_tse', 'declaracao', 'votacao']),
+    tipo: z.enum(['plano_tse', 'declaracao', 'analise', 'votacao']),
     url: z.url({ protocol: /^https$/, error: 'Fonte precisa ser uma URL HTTPS' }),
     veiculo: z.string().min(2),
     pagina: z.number().int().positive().optional(),
@@ -32,8 +32,15 @@ const afirmacoes = defineCollection({
     .object({
       id: z.string().regex(/^[a-z0-9-]+$/),
       tema: z.enum([
-        'economia', 'trabalho', 'impostos', 'seguranca', 'educacao',
-        'saude', 'estado', 'meio-ambiente', 'social',
+        'economia',
+        'trabalho',
+        'impostos',
+        'seguranca',
+        'educacao',
+        'saude',
+        'estado',
+        'meio-ambiente',
+        'social',
       ]),
       titulo: z.string().min(10).max(140),
       explicacao: z.string().min(40).max(700), // linguagem simples, sem opinião

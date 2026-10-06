@@ -102,6 +102,12 @@
         "fontes": [
           {
             "tipo": "declaracao",
+            "url": "https://www.nsctotal.com.br/politica/flavio-bolsonaro-diz-ser-contra-fim-da-escala-6x1-e-que-lula-faz-movimento-oportunista-no-2o-turno",
+            "veiculo": "NSC Total",
+            "acessadoEm": "2026-10-06"
+          },
+          {
+            "tipo": "declaracao",
             "url": "https://www.opovo.com.br/agencia/bbc/2026/06/08/pec-da-liberdade-ou-escravidao-o-que-pode-mudar-no-regime-de-trabalho-por-hora-proposto-por-flavio-bolsonaro-para-barrar-fim-da-6x1.html",
             "veiculo": "BBC News Brasil",
             "acessadoEm": "2026-10-05"
@@ -410,6 +416,12 @@
             "veiculo": "Plano de governo (TSE)",
             "pagina": 48,
             "acessadoEm": "2026-10-05"
+          },
+          {
+            "tipo": "analise",
+            "url": "https://revistaempreende.com.br/eleicoes-2026-lula-e-flavio-divergem-em-regras-fiscais-impostos-e-minerais-criticos/",
+            "veiculo": "Revista Empreende",
+            "acessadoEm": "2026-10-06"
           }
         ]
       },

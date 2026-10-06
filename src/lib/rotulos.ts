@@ -29,6 +29,7 @@ export const ROTULO_POSICAO: Record<PosicaoCandidato, string> = {
 
 export function rotuloFonte(fonte: FonteQuiz): string {
   if (fonte.tipo === 'plano_tse') return `Plano de governo no TSE, página ${fonte.pagina ?? '?'}`;
+  if (fonte.tipo === 'analise') return `Análise dos planos (${fonte.veiculo})`;
   if (fonte.tipo === 'votacao') return `Votação registrada (${fonte.veiculo})`;
   return `Declaração (${fonte.veiculo})`;
 }
