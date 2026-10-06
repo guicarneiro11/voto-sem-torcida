@@ -1,7 +1,7 @@
 import type { PosicaoCandidato } from './afinidade';
 
 export interface FonteQuiz {
-  tipo: 'plano_tse' | 'declaracao' | 'votacao';
+  tipo: 'plano_tse' | 'declaracao' | 'analise' | 'votacao';
   url: string;
   veiculo: string;
   pagina?: number;
