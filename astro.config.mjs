@@ -8,6 +8,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: 'https://votosemtorcida.com.br',
   output: 'static', // sem servidor = sem superfície de ataque de backend
+  trailingSlash: 'never',
   markdown: { syntaxHighlight: false }, // o site não exibe código; evita estilos inline
   integrations: [svelte(), sitemap()],
   vite: { plugins: [tailwindcss()] },
