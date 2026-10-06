@@ -3,11 +3,13 @@ import { defineConfig } from 'astro/config';
 import svelte from '@astrojs/svelte';
 import tailwindcss from '@tailwindcss/vite';
 
+import sitemap from "@astrojs/sitemap";
+
 export default defineConfig({
   site: 'https://votosemtorcida.com.br',
   output: 'static', // sem servidor = sem superfície de ataque de backend
   markdown: { syntaxHighlight: false }, // o site não exibe código; evita estilos inline
-  integrations: [svelte()],
+  integrations: [svelte(), sitemap()],
   vite: { plugins: [tailwindcss()] },
 
   // CSP nativa do Astro 6: gera hashes de todo script/estilo que o Astro emite,
