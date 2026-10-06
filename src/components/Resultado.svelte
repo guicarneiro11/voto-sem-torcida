@@ -155,33 +155,43 @@
     </p>
   {/if}
 
-  <ul class="border-linha bg-cartao mt-8 space-y-6 rounded-xl border p-6 sm:p-8">
-    {#each ordenados as c (c.candidatoId)}
-      <li>
-        <div class="flex items-baseline justify-between gap-4">
-          <span class="font-display text-xl font-semibold">{nomeDe(c.candidatoId)}</span>
-          <span class="text-2xl font-semibold tabular-nums">
-            {c.percentual === null ? '—' : `${c.percentual}%`}
-          </span>
-        </div>
-        <!-- SVG em vez de style="width": respeita a CSP sem precisar de estilos inline -->
-        <svg
-          class="mt-2 h-3 w-full"
-          viewBox="0 0 100 6"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <rect width="100" height="6" rx="3" class="fill-linha" />
-          <rect width={c.percentual ?? 0} height="6" rx="3" class="fill-acento" />
-        </svg>
-        <p class="text-suave mt-1.5 text-sm">
-          {c.percentual === null
-            ? 'Nenhuma proposta respondida tinha posição deste candidato.'
-            : `Comparado em ${c.comparadas} ${c.comparadas === 1 ? 'proposta' : 'propostas'}.`}
-        </p>
-      </li>
-    {/each}
-  </ul>
+  <div class="border-linha bg-cartao mt-8 rounded-xl border p-6 sm:p-8">
+    <p class="text-suave text-sm">
+      Cada percentual é calculado separadamente, por isso eles não somam 100%.
+    </p>
+    <ul class="mt-5 space-y-7">
+      {#each ordenados as c (c.candidatoId)}
+        <li>
+          <p class="text-lg leading-snug">
+            {#if c.percentual === null}
+              Não foi possível comparar suas respostas com as posições de
+              <strong class="font-semibold">{nomeDe(c.candidatoId)}</strong>
+            {:else}
+              Você concorda <strong class="text-2xl font-semibold tabular-nums"
+                >{c.percentual}%</strong
+              >
+              com as posições de <strong class="font-semibold">{nomeDe(c.candidatoId)}</strong>
+            {/if}
+          </p>
+          <!-- SVG em vez de style="width": respeita a CSP sem precisar de estilos inline -->
+          <svg
+            class="mt-2 h-3 w-full"
+            viewBox="0 0 100 6"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <rect width="100" height="6" rx="3" class="fill-linha" />
+            <rect width={c.percentual ?? 0} height="6" rx="3" class="fill-acento" />
+          </svg>
+          <p class="text-suave mt-1.5 text-sm">
+            {c.percentual === null
+              ? 'Nenhuma proposta respondida tinha posição deste candidato.'
+              : `Calculado em ${c.comparadas} ${c.comparadas === 1 ? 'proposta' : 'propostas'} em que ${nomeDe(c.candidatoId)} tem posição.`}
+          </p>
+        </li>
+      {/each}
+    </ul>
+  </div>
 
   <div class="mt-6 grid gap-3 sm:grid-cols-3">
     <button
