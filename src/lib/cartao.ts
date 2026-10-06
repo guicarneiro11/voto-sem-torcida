@@ -1,6 +1,6 @@
 /**
  * Gera, no próprio navegador, a imagem de compartilhamento do resultado.
- * Nada é enviado a servidor algum: o canvas vira um arquivo PNG local.
+ * Nada é enviado a servidor algum: o canvas vira um arquivo de imagem local.
  */
 
 export interface LinhaCartao {
@@ -8,10 +8,7 @@ export interface LinhaCartao {
   percentual: number | null;
 }
 
-export type FormatoCartao = 'feed' | 'stories';
-
 export interface DadosCartao {
-  formato: FormatoCartao;
   manchete: string;
   linhas: LinhaCartao[];
   respondidas: number;
@@ -20,13 +17,7 @@ export interface DadosCartao {
 }
 
 const L = 1080;
-// Feed (4:5) para WhatsApp, X e feed do Instagram; Stories (9:16) para Instagram/WhatsApp Status.
-const ALTURA: Record<FormatoCartao, number> = { feed: 1350, stories: 1920 };
-// Nos Stories, o topo e a base ficam cobertos pela interface do app: o conteúdo fica no meio.
-const ZONA_SEGURA: Record<FormatoCartao, { topo: number; base: number }> = {
-  feed: { topo: 0, base: 0 },
-  stories: { topo: 230, base: 300 },
-};
+const A = 1350; // 4:5: funciona em conversas, posts e Stories (o app preenche o espaço que sobra)
 const COR = {
   papel: '#f6f3ec',
   tinta: '#1d1b24',
@@ -71,9 +62,7 @@ function barra(
 
 export async function gerarCartao(dados: DadosCartao): Promise<Blob> {
   await document.fonts.ready;
-  const A = ALTURA[dados.formato];
-  const { topo, base } = ZONA_SEGURA[dados.formato];
-  const fim = A - base;
+  const fim = A;
   const canvas = document.createElement('canvas');
   canvas.width = L;
   canvas.height = A;
@@ -88,11 +77,11 @@ export async function gerarCartao(dados: DadosCartao): Promise<Blob> {
 
   ctx.fillStyle = COR.acento;
   ctx.font = `600 30px ${SANS}`;
-  ctx.fillText('VOTO SEM TORCIDA', margem, topo + 150);
+  ctx.fillText('VOTO SEM TORCIDA', margem, 150);
 
   ctx.fillStyle = COR.tinta;
   ctx.font = `600 76px ${SERIFA}`;
-  let y = topo + 270;
+  let y = 270;
   for (const linha of quebrarTexto(ctx, dados.manchete, largura)) {
     ctx.fillText(linha, margem, y);
     y += 92;
@@ -142,7 +131,8 @@ export async function gerarCartao(dados: DadosCartao): Promise<Blob> {
   return new Promise((resolve, reject) =>
     canvas.toBlob(
       (b) => (b ? resolve(b) : reject(new Error('Falha ao gerar imagem'))),
-      'image/png',
+      'image/jpeg',
+      0.92,
     ),
   );
 }

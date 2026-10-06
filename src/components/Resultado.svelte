@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { RespostaEleitor, ResultadoAfinidade } from '../lib/afinidade';
-  import { gerarCartao, type FormatoCartao } from '../lib/cartao';
+  import { gerarCartao } from '../lib/cartao';
   import { ROTULO_POSICAO, ROTULO_RESPOSTA, rotuloFonte } from '../lib/rotulos';
   import type { AfirmacaoQuiz, CandidatoQuiz } from '../lib/tipos';
 
@@ -70,7 +70,7 @@
   let titulo: HTMLHeadingElement | undefined = $state();
   $effect(() => titulo?.focus()); // leitores de tela anunciam o resultado ao chegar
 
-  let compartilhando = $state<FormatoCartao | null>(null);
+  let compartilhando = $state(false);
   let erroCompartilhar = $state('');
   let linkCopiado = $state(false);
 
@@ -92,20 +92,18 @@
     }
   }
 
-  async function compartilhar(formato: FormatoCartao) {
-    compartilhando = formato;
+  async function compartilhar() {
+    compartilhando = true;
     erroCompartilhar = '';
     try {
       const imagem = await gerarCartao({
-        formato,
         manchete,
         linhas: ordenados.map((c) => ({ nome: nomeDe(c.candidatoId), percentual: c.percentual })),
         respondidas: resultado.respondidas,
         total: afirmacoes.length,
         endereco: endereco.replace(/^https?:\/\//, ''),
       });
-      const nome = formato === 'stories' ? 'voto-sem-torcida-stories.png' : 'voto-sem-torcida.png';
-      const arquivo = new File([imagem], nome, { type: 'image/png' });
+      const arquivo = new File([imagem], 'voto-sem-torcida.jpg', { type: 'image/jpeg' });
       const texto = `${convite} Faça o seu: ${endereco}`;
 
       if (navigator.canShare?.({ files: [arquivo] })) {
@@ -123,7 +121,7 @@
         erroCompartilhar = 'Não foi possível gerar a imagem neste navegador.';
       }
     } finally {
-      compartilhando = null;
+      compartilhando = false;
     }
   }
 </script>
@@ -185,18 +183,11 @@
     {/each}
   </ul>
 
-  <div class="mt-6 grid gap-3 sm:grid-cols-2">
+  <div class="mt-6 grid gap-3 sm:grid-cols-3">
     <button
-      class="bg-tinta text-papel hover:bg-acento-forte rounded-lg px-5 py-3 font-semibold transition disabled:opacity-60"
-      disabled={compartilhando !== null}
-      onclick={() => compartilhar('feed')}
-      >{compartilhando === 'feed' ? 'Gerando imagem…' : 'Imagem para conversas e posts'}</button
-    >
-    <button
-      class="bg-tinta text-papel hover:bg-acento-forte rounded-lg px-5 py-3 font-semibold transition disabled:opacity-60"
-      disabled={compartilhando !== null}
-      onclick={() => compartilhar('stories')}
-      >{compartilhando === 'stories' ? 'Gerando imagem…' : 'Imagem para Stories'}</button
+      class="bg-tinta text-papel hover:bg-acento-forte rounded-lg px-5 py-3 font-semibold transition disabled:opacity-60 sm:col-span-3"
+      disabled={compartilhando}
+      onclick={compartilhar}>{compartilhando ? 'Gerando imagem…' : 'Compartilhar resultado'}</button
     >
     <a
       class="border-linha hover:border-tinta rounded-lg border-2 px-5 py-3 text-center font-semibold"
@@ -205,7 +196,7 @@
       rel="noopener noreferrer">Postar no X</a
     >
     <button
-      class="border-linha hover:border-tinta rounded-lg border-2 px-5 py-3 font-semibold"
+      class="border-linha hover:border-tinta rounded-lg border-2 px-5 py-3 font-semibold sm:col-span-2"
       onclick={copiarLink}>{linkCopiado ? 'Link copiado ✓' : 'Copiar link do site'}</button
     >
   </div>
